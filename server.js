@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDb = require("./config/db");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const error = require("./middlewares/errorMiddleware");
 const colors = require("colors");
 const { products } = require("./data/products");
@@ -19,7 +20,7 @@ dotenv.config({
 connectDb();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
