@@ -12,7 +12,9 @@ const userRoutes = require("./routes/userRoutes");
 // Order Routes
 const orderRoutes = require("./routes/orderRoutes");
 
-dotenv.config();
+dotenv.config({
+  path: ".env",
+});
 
 connectDb();
 
@@ -33,7 +35,7 @@ app.use("/api/orders", orderRoutes);
 app.use(error.notFound);
 
 app.use(error.errorHandler);
-console.log("dotenv", process.env);
+console.log("dotenv", process.env.PORT);
 app.listen(
   process.env.PORT || 5000,
   console.log("Server running on port 5000")
