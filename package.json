@@ -20,9 +20,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "start": "nodemon server.js",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d"
   },
   "eslintConfig": {
     "extends": [
